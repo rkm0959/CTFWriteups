@@ -10,7 +10,9 @@ UnionCTF : https://rkm0959.tistory.com/206
 
 AeroCTF : https://rkm0959.tistory.com/211
 
+zer0ptsCTF : https://rkm0959.tistory.com/213
 
+LINECTF : https://rkm0959.tistory.com/219
 
 ### non-CTF articles in Cryptography
 
