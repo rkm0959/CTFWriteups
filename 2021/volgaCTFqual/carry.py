@@ -7,6 +7,7 @@ def get_k(x, k):
     return (x & (1 << k)) >> k 
 
 # Arnault 2004.
+# https://ieeexplore.ieee.org/document/1291740
 def check_ok(recovered_bits, lam):
     k = 2 * lam + 1
     r_0, u_0, v_0 = (1 << k), 1, 0 
