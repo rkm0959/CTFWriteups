@@ -71,6 +71,7 @@ D = 13
 K = 4
 H = 32
 
+##### building irreducible binary polys of deg <= B #####
 IRR = []
 IRRGF = []
 
@@ -91,6 +92,8 @@ ARR = [[0] * 747 for _ in range(1332)]
 CNT = 0
 POL = (y ** 127) + y + 1
 TOTCNT = 0
+
+##### finding relations & building database #####
 '''
 def find_sol(params):
     U, IRR = params
@@ -158,6 +161,7 @@ for U in tqdm(range(80 * 12 + 1, 1 << 14, 12)):
     print(CNT)
 '''
 
+##### solving system of linear equations #####
 '''
 filef = open('ans.txt', 'r')
 
@@ -178,7 +182,7 @@ MAT = Matrix(GF(2 ** 127 - 1), ARR)
 
 SS = MAT.right_kernel().basis()
 
-print(len(SS))
+print(len(SS)) # should be one
 
 SS = SS[0]
 darn = open('res.txt', 'w')
@@ -202,6 +206,7 @@ def int_to_poly(v):
             f += (y ** i)
     return f
 
+##### finding logarithms #####
 def MODERATE(TARGET, SS):
     print(TARGET)
     cbound = TARGET.degree()
@@ -265,7 +270,6 @@ def MODERATE(TARGET, SS):
     assert(False)
 
 
-
 def GETLOG(TARGET, SS):
     p = (2 ** 127) - 1
     print(TARGET)
@@ -315,9 +319,6 @@ z = P(z)
 print(g)
 print(z)
 
-print("LETS GO")
-
-
 CALC_1 = GETLOG(g,  SS)
 CALC_2 = GETLOG(z,  SS)
 
@@ -327,8 +328,6 @@ CALC_2 = 40483060082070127030444832815647636291
 '''
 
 p = (2 ** 127) - 1
-
-# t * CALC_2
 
 tt = (CALC_1 * inverse(CALC_2, p)) % p
 
@@ -341,5 +340,4 @@ flag = bytes.fromhex(flag)
 for i in range(100):
     cipher = AES.new(long_to_bytes(ans), AES.MODE_ECB)
     ans += (p-1)
-
     print(cipher.decrypt(flag))
