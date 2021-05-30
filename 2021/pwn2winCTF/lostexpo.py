@@ -102,8 +102,6 @@ for i in range(256):
         print(i)
         break
 
-print("HUH?")
-
 # build (2, 0) | (2, 1)
 found = False
 for i in tqdm(range(256)):
