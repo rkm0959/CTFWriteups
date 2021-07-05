@@ -106,6 +106,7 @@ for i in range(64):
     cur = vector(GF(2), cur)
     LFSR.append(cur)
 
+f = open("Matrix3.txt", "w")
 for i in tqdm(range(10000)):
     LFSR = LFSR[1:] + [LFSR[0] + LFSR[55]]
     LFSR = LFSR[1:] + [LFSR[0] + LFSR[55]]
