@@ -14,6 +14,10 @@ zer0ptsCTF : https://rkm0959.tistory.com/213
 
 LINECTF : https://rkm0959.tistory.com/219
 
+0CTF : https://rkm0959.tistory.com/229
+
+GoogleCTF : https://rkm0959.tistory.com/232
+
 ### non-CTF articles in Cryptography
 
 Diophantine Argument of Knowledge : https://rkm0959.tistory.com/193
