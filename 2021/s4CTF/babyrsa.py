@@ -41,7 +41,6 @@ for k in [77, 78]:
     # pq (10^2k + 1) + (p^2 + q^2) 10^k = pkey 
     sqsum = (pkey * inverse(10 ** k, 10 ** (2 * k) + 1) ) % ((10 ** (2 * k)) + 1)
     for i in range(1, 5):
-        sqsum += (10 ** (2 * k)) + 1
         if sqsum > (2 ** 513):
             break
         pq = (pkey - 10 ** k * sqsum) // (10 ** (2 * k) + 1)
@@ -56,3 +55,4 @@ for k in [77, 78]:
             d = inverse(e, phi)
             print(long_to_bytes(pow(enc, d, pkey)))
             exit()
+	sqsum += (10 ** (2 * k)) + 1
