@@ -17,6 +17,7 @@ from Crypto.Cipher import AES, ARC4, DES
 
 from z3 import *
 
+# https://github.com/jhs7jhs/LLL/tree/master/low-density-attack
 
 def inthroot(a, n):
     return a.nth_root(n, truncate_mode=True)[0]
